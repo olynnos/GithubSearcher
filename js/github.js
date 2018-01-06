@@ -6,8 +6,10 @@ class Github{
 
   //using async to get a user
   async getUser(user){
+    // wait for data to be returned from fetch and then put it into the variable.
     const profileResponse = await fetch (`https://api.github.com/users/${user}?client_id=${this.client_id}&client_secret=${this.client_secret}`);
 
+    //wait for the profileRespone.json() to return data and then put it into the profile variable.
     const profile = await profileResponse.json();
 
     return{
